@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">GlobalTrashKiller</string>
+    <string name="description">Disable MIUI GlobalTrash</string>
+</resources>
