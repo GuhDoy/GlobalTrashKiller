@@ -15,5 +15,9 @@ public class XposedInit implements IXposedHookLoadPackage {
                 "com.android.providers.media.util.GalleryMediaStore", lpparam.classLoader,
                 "initGolbalTrash", Context.class, XC_MethodReplacement.returnConstant(null)
         );
+        XposedHelpers.findAndHookMethod(
+                "com.android.providers.media.MediaReceiverInjector", lpparam.classLoader,
+                "initDragImgsDir", XC_MethodReplacement.returnConstant(null)
+        );
     }
 }

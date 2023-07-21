@@ -3,6 +3,7 @@ plugins {
 }
 
 def sdk = 33
+def gitCommitCount = Integer.parseInt('git rev-list --count HEAD'.execute([], project.rootDir).text.trim())
 
 android {
     compileSdk sdk
@@ -12,8 +13,8 @@ android {
         applicationId 'me.gm.globaltrashkiller'
         minSdk 31
         targetSdk sdk
-        versionCode 1
-        versionName '1'
+        versionCode gitCommitCount
+        versionName gitCommitCount.toString()
 
         testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
     }
